@@ -1,0 +1,26 @@
+body {
+    font-family: 'Raleway' !important;
+    background-color: #121212;
+}
+#main{
+    width: 80%;
+    height: 30rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    color: white;
+    /* background-color: #F7ECDE; */
+}
+
+.left-content{
+    margin: 3rem;
+}
+
+.post {
+    margin-top: 1rem;
+    color: #D9D9D9;
+}

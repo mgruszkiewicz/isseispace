@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ .Title }}</title>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Website meta description for google search results go here" />
+    <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#1A94D2" />
+    {{ $css := "css/bootstrap.min.css" | relURL }}
+    <link rel="stylesheet" href="{{ $css }}">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/style.css">
+    
+   
+    <!-- 
+        include a favicon for your site if you have it, else omit the line below 
+        Location of favicon can be in mytheme/static/favicon.ico
+    -->
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+
+
+</head>
+  <body>
+      <div class="container">
+          <div class="row" id="main">
+            <div class="col-sm left-content">
+              <h1>
+                Hello World!<br>
+                I'm Issei
+              </h1>
+              <p>
+                System Administrator<br>
+                Software Developer (PHP Symfony, Laravel, Python, Django)
+              </p>
+              <p>
+                My side hobby is photography, embedded devices
+              </p>
+              <p>
+                See some of my <a href="/projects">projects</a>
+              </p>
+              <p>
+                Find me on <a href="https://github.com/ihyoudou" taget="_blank">Github</a>,
+                <a href="https://twitter.com/isseihere" target="_blank">Twitter</a>,
+                 say hello at <a href="mailto::hello@issei.space">hello@issei.space</a>
+              </p>
+            </div>
+            <div class="col-sm px-0">
+              {{ $img:= "img/IMG_0111.JPG" | relURL }}
+              <img src='{{$img}}' class="img-fluid" style="height:80%;margin:1rem;">
+            </div>
+          </div>
+        </div>    
+</html>
