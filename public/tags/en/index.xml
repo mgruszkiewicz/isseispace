@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>en on Issei.space</title>
+    <link>/tags/en/</link>
+    <description>Recent content in en on Issei.space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Aug 2022 00:24:56 +0200</lastBuildDate><atom:link href="/tags/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a static page in Hugo</title>
+      <link>/blog/hello-world/</link>
+      <pubDate>Sat, 13 Aug 2022 00:24:56 +0200</pubDate>
+      
+      <guid>/blog/hello-world/</guid>
+      <description>Lately, i decided to remake my homepage and move to somekind of jamstack page generator. I&amp;rsquo;m already using Jekyll on my blog, and was thinking of moving to jamstack on my homepage for some time, but i was not sure which page generator to pick.
+I was pretty happy with my Jekyll setup, but due to lack of knowledge about CI/CD at the time and using multiple computers to write posts, i found it pretty unconvinent to create content.</description>
+      <content>&lt;p&gt;Lately, i decided to remake my homepage and move to somekind of jamstack page generator. I&amp;rsquo;m already using Jekyll on my blog, and was thinking of moving to jamstack on my homepage for some time, but i was not sure which page generator to pick.&lt;br&gt;
+I was pretty happy with my Jekyll setup, but due to lack of knowledge about CI/CD at the time and using multiple computers to write posts, i found it pretty unconvinent to create content.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

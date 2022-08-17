@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>&#39;Odceglanie&#39; NAS&#39;a Buffalo LS210/LS220 :: Issei.space</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ten poradnik powinien działać dla Buffalo LS210/LS220 i rozwiązać problem z siedmiokrotnym miganiem czerwonej diody podczas rozruchu.
+Na początku informuję że nie odpowiadam za ewentualne uszkodzenia oraz utratę danych! Przed rozpoczęciem, jeżeli nie mamy kopii zapasowej, należy taką utworzyć - więcej informacji jak odczytać dyski z NAS&amp;rsquo;a jest na dole
+W przypadku w którym NAS nie jest w ogóle widoczny w sieci oraz w NAS Navigatorze należy wgrać podstawowy system od początku używając TFTP." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/blog/odceglanie-buffalo-nas/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/pink.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/img/favicon/pink.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="&#39;Odceglanie&#39; NAS&#39;a Buffalo LS210/LS220">
+<meta property="og:description" content="Ten poradnik powinien działać dla Buffalo LS210/LS220 i rozwiązać problem z siedmiokrotnym miganiem czerwonej diody podczas rozruchu.
+Na początku informuję że nie odpowiadam za ewentualne uszkodzenia oraz utratę danych! Przed rozpoczęciem, jeżeli nie mamy kopii zapasowej, należy taką utworzyć - więcej informacji jak odczytać dyski z NAS&amp;rsquo;a jest na dole
+W przypadku w którym NAS nie jest w ogóle widoczny w sieci oraz w NAS Navigatorze należy wgrać podstawowy system od początku używając TFTP." />
+<meta property="og:url" content="/blog/odceglanie-buffalo-nas/" />
+<meta property="og:site_name" content="Issei.space" />
+
+  
+    <meta property="og:image" content="/img/favicon/pink.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2019-11-06 00:24:56 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="pink">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Issei.space
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/blog">Blog</a></li>
+        
+      
+        
+          <li><a href="/projects">Projects</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/blog">Blog</a></li>
+      
+    
+      
+        <li><a href="/projects">Projects</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/blog/odceglanie-buffalo-nas/">&lsquo;Odceglanie&rsquo; NAS&rsquo;a Buffalo LS210/LS220</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2019-11-06
+        
+      </span>
+    
+    
+    
+      <span class="post-reading-time">:: 2 min read (324 words)</span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/pl/">pl</a>&nbsp;
+    
+    #<a href="/tags/embedded/">embedded</a>&nbsp;
+    
+    #<a href="/tags/nas/">nas</a>&nbsp;
+    
+  </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="https://i.issei.space/lu47v.png" alt=""></p>
+<p>Ten poradnik powinien działać dla Buffalo LS210/LS220 i rozwiązać problem z siedmiokrotnym miganiem czerwonej diody podczas rozruchu.</p>
+<p>Na początku informuję że nie odpowiadam za ewentualne uszkodzenia oraz utratę danych! <strong>Przed rozpoczęciem, jeżeli nie mamy kopii zapasowej, należy taką utworzyć</strong> - więcej informacji jak odczytać dyski z NAS&rsquo;a jest na dole</p>
+<p>W przypadku w którym NAS nie jest w ogóle widoczny w sieci oraz w NAS Navigatorze należy wgrać podstawowy system od początku używając TFTP. Domyślnie NAS nada sobie adres IP 192.168.11.150/24. Adres serwera TFTP (swojego komputera) należy ustawić na 192.168.11.1/24 i upewnić się aby wyłączyć zaporę systemu a następnie podłączyć NAS bezpośrednio do komputera kablem sieciowym.</p>
+<p>W oknie serwera TFTP powinien pojawić się komunikat <code>listening On: 192.168.11.1:69</code></p>
+<p>Jeżeli się nie wyświetla, lub wyświetla się inny adres IP należy sprawdzić konfigurację adresów IP (lub spróbować odłączyć i podłączyć przewód sieciowy, może też być konieczne aby przed zmianą IP być podłączonym do obecnej sieci jeżeli adres się nie zmienia na ten który ustawiliśmy)</p>
+<p>Następnie należy przytrzymać czerwony przycisk &ldquo;function&rdquo; z tyłu NAS i podłączyć zasilanie. Należy trzymać przycisk function do czasu kiedy dioda z przodu NAS zacznie migać na biało, następnie puścić przycisk i nadusić go jeszcze raz. W konsoli powinny pokazywać się komunikaty</p>
+<p><code>Client 192.168.11.150 ... Block Served</code><br>
+<code>Client 192.168.11.150 ... Block Served</code></p>
+<p>Teraz NAS powinien być w EM Mode (Emergency mode) i pokazywać się w NAS Navigatorze.</p>
+<p><img src="https://i.issei.space/ai389.jpg" alt=""></p>
+<p>Następnie należy uruchomić program LSUpdater.exe, poczekać aż wyszuka naszego NAS&rsquo;a i kliknąć przycisk Update.</p>
+<p><img src="https://i.issei.space/yp3di.png" alt=""></p>
+<p><img src="https://i.issei.space/8x00q.png" alt=""> <em><a href="http://commonmanrants.blogspot.com/2014/01/buffalo-linkstation-partition-not-found.html">źródło</a></em></p>
+<p>Proces ten będzie trwał kilka minut, po pomyślnym ukończeniu należy podłączyć NAS do sieci aby dostał adres przez DHCP. Po chwili serwer powinien być widoczny w NAS Navigatorze z jego adresem IP.</p>
+<p>Linki do pobrania wszystkich potrzebnych plików: <a href="https://files.s2.issei.space/blog/Buffalo_ls2xx_recovery.zip">Download</a> | <a href="https://mega.nz/#!SRczCaxC!zZGums_mUh5XQUXvyBnLmz7GAaAZKwwJhxtsj87n0Mw">Mirror [mega.nz]</a> | <a href="https://drive.google.com/file/d/1jv4Rsm0fKDjrGTUyFFXdOGSFcFRLr43F/view?usp=sharing">Mirror [GDrive]</a></p>
+<p>Suma kontrolna: <code>SHA1: BA3E87B4C61AAA85D8A58321E35D7B68BEBF97DE</code></p>
+<p>Dodatkowe informacje:</p>
+<ul>
+<li>Dane na dyskach są w formacie EXT4 oraz RAID jest tworzony przez MD, więc bez problemu można RAID lub pojedynczy dysk odczytać przez linuxa lub z zastosowaniem przykładowo <a href="http://www.ext2fsd.com/">Ext2Fsd</a> pod Windowsem.</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

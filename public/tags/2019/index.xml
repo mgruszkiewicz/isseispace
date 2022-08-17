@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2019 on Issei.space</title>
+    <link>/tags/2019/</link>
+    <description>Recent content in 2019 on Issei.space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Aug 2022 00:24:56 +0200</lastBuildDate><atom:link href="/tags/2019/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reddit Archiver</title>
+      <link>/projects/redditarchiver/</link>
+      <pubDate>Sat, 13 Aug 2022 00:24:56 +0200</pubDate>
+      
+      <guid>/projects/redditarchiver/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Sugarcane</title>
+      <link>/projects/sugarcane/</link>
+      <pubDate>Sat, 13 Aug 2022 00:24:56 +0200</pubDate>
+      
+      <guid>/projects/sugarcane/</guid>
+      <description>Sugarcane is a billing and provisioning system for VPS based on Proxmox hypervisor.
+It featured:
+Prepaid credit system, Hourly billing, Vouchers support, Przelewy24 payment gateway support, VPS managment console (start, stop, restart, VNC), SSH key managment, NAT VPS deployment, Reverse proxy manager, Email notifications, Password reset feature, Admin panel </description>
+      <content>&lt;p&gt;Sugarcane is a billing and provisioning system for VPS based on Proxmox hypervisor.&lt;br&gt;
+It featured:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prepaid credit system,&lt;/li&gt;
+&lt;li&gt;Hourly billing,&lt;/li&gt;
+&lt;li&gt;Vouchers support,&lt;/li&gt;
+&lt;li&gt;Przelewy24 payment gateway support,&lt;/li&gt;
+&lt;li&gt;VPS managment console (start, stop, restart, VNC),&lt;/li&gt;
+&lt;li&gt;SSH key managment,&lt;/li&gt;
+&lt;li&gt;NAT VPS deployment,&lt;/li&gt;
+&lt;li&gt;Reverse proxy manager,&lt;/li&gt;
+&lt;li&gt;Email notifications,&lt;/li&gt;
+&lt;li&gt;Password reset feature,&lt;/li&gt;
+&lt;li&gt;Admin panel&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

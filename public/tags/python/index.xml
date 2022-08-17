@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Issei.space</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on Issei.space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Aug 2022 00:24:56 +0200</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reddit Archiver</title>
+      <link>/projects/redditarchiver/</link>
+      <pubDate>Sat, 13 Aug 2022 00:24:56 +0200</pubDate>
+      
+      <guid>/projects/redditarchiver/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>

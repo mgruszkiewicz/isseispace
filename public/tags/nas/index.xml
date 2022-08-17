@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nas on Issei.space</title>
+    <link>/tags/nas/</link>
+    <description>Recent content in nas on Issei.space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Nov 2019 00:24:56 +0200</lastBuildDate><atom:link href="/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#39;Odceglanie&#39; NAS&#39;a Buffalo LS210/LS220</title>
+      <link>/blog/odceglanie-buffalo-nas/</link>
+      <pubDate>Wed, 06 Nov 2019 00:24:56 +0200</pubDate>
+      
+      <guid>/blog/odceglanie-buffalo-nas/</guid>
+      <description>Ten poradnik powinien działać dla Buffalo LS210/LS220 i rozwiązać problem z siedmiokrotnym miganiem czerwonej diody podczas rozruchu.
+Na początku informuję że nie odpowiadam za ewentualne uszkodzenia oraz utratę danych! Przed rozpoczęciem, jeżeli nie mamy kopii zapasowej, należy taką utworzyć - więcej informacji jak odczytać dyski z NAS&amp;rsquo;a jest na dole
+W przypadku w którym NAS nie jest w ogóle widoczny w sieci oraz w NAS Navigatorze należy wgrać podstawowy system od początku używając TFTP.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;https://i.issei.space/lu47v.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Ten poradnik powinien działać dla Buffalo LS210/LS220 i rozwiązać problem z siedmiokrotnym miganiem czerwonej diody podczas rozruchu.&lt;/p&gt;
+&lt;p&gt;Na początku informuję że nie odpowiadam za ewentualne uszkodzenia oraz utratę danych! &lt;strong&gt;Przed rozpoczęciem, jeżeli nie mamy kopii zapasowej, należy taką utworzyć&lt;/strong&gt; - więcej informacji jak odczytać dyski z NAS&amp;rsquo;a jest na dole&lt;/p&gt;
+&lt;p&gt;W przypadku w którym NAS nie jest w ogóle widoczny w sieci oraz w NAS Navigatorze należy wgrać podstawowy system od początku używając TFTP. Domyślnie NAS nada sobie adres IP 192.168.11.150/24. Adres serwera TFTP (swojego komputera) należy ustawić na 192.168.11.1/24 i upewnić się aby wyłączyć zaporę systemu a następnie podłączyć NAS bezpośrednio do komputera kablem sieciowym.&lt;/p&gt;
+&lt;p&gt;W oknie serwera TFTP powinien pojawić się komunikat &lt;code&gt;listening On: 192.168.11.1:69&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Jeżeli się nie wyświetla, lub wyświetla się inny adres IP należy sprawdzić konfigurację adresów IP (lub spróbować odłączyć i podłączyć przewód sieciowy, może też być konieczne aby przed zmianą IP być podłączonym do obecnej sieci jeżeli adres się nie zmienia na ten który ustawiliśmy)&lt;/p&gt;
+&lt;p&gt;Następnie należy przytrzymać czerwony przycisk &amp;ldquo;function&amp;rdquo; z tyłu NAS i podłączyć zasilanie. Należy trzymać przycisk function do czasu kiedy dioda z przodu NAS zacznie migać na biało, następnie puścić przycisk i nadusić go jeszcze raz. W konsoli powinny pokazywać się komunikaty&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Client 192.168.11.150 ... Block Served&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;Client 192.168.11.150 ... Block Served&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Teraz NAS powinien być w EM Mode (Emergency mode) i pokazywać się w NAS Navigatorze.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.issei.space/ai389.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Następnie należy uruchomić program LSUpdater.exe, poczekać aż wyszuka naszego NAS&amp;rsquo;a i kliknąć przycisk Update.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.issei.space/yp3di.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.issei.space/8x00q.png&#34; alt=&#34;&#34;&gt; &lt;em&gt;&lt;a href=&#34;http://commonmanrants.blogspot.com/2014/01/buffalo-linkstation-partition-not-found.html&#34;&gt;źródło&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Proces ten będzie trwał kilka minut, po pomyślnym ukończeniu należy podłączyć NAS do sieci aby dostał adres przez DHCP. Po chwili serwer powinien być widoczny w NAS Navigatorze z jego adresem IP.&lt;/p&gt;
+&lt;p&gt;Linki do pobrania wszystkich potrzebnych plików: &lt;a href=&#34;https://files.s2.issei.space/blog/Buffalo_ls2xx_recovery.zip&#34;&gt;Download&lt;/a&gt; | &lt;a href=&#34;https://mega.nz/#!SRczCaxC!zZGums_mUh5XQUXvyBnLmz7GAaAZKwwJhxtsj87n0Mw&#34;&gt;Mirror [mega.nz]&lt;/a&gt; | &lt;a href=&#34;https://drive.google.com/file/d/1jv4Rsm0fKDjrGTUyFFXdOGSFcFRLr43F/view?usp=sharing&#34;&gt;Mirror [GDrive]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Suma kontrolna: &lt;code&gt;SHA1: BA3E87B4C61AAA85D8A58321E35D7B68BEBF97DE&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Dodatkowe informacje:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dane na dyskach są w formacie EXT4 oraz RAID jest tworzony przez MD, więc bez problemu można RAID lub pojedynczy dysk odczytać przez linuxa lub z zastosowaniem przykładowo &lt;a href=&#34;http://www.ext2fsd.com/&#34;&gt;Ext2Fsd&lt;/a&gt; pod Windowsem.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
