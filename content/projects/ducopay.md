@@ -1,7 +1,7 @@
 ---
 title: "Ducopay"
 date: 2022-08-14T00:24:56+02:00
-draft: false
+draft: true
 tags: ['2021', 'php', 'symfony']
 ---
 ![main page](/img/projects/ducopay/firefox_OEhjHgplgP.png)
