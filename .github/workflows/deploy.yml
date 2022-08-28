@@ -1,0 +1,25 @@
+name: Hugo Build and Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to prod server using ssh
+        if: ${{ success() && github.ref == 'refs/heads/main'}}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_PROD_USERNAME }}
+          key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          port: ${{ secrets.DEPLOY_SSH_PORT }}
+          script: |
+            cd /home/issei/web/issei.space/public_html
+            git reset --hard
+            git pull origin main --rebase --autostash
+            git status
+            hugo
