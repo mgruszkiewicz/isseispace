@@ -2,10 +2,9 @@
 title: "TrueTracker"
 date: 2022-08-14T00:24:56+02:00
 draft: false
+cover: "/img/projects/truetracker/mainpage.png"
 tags: ['2021', 'php', 'symfony']
 ---
-![main page](/img/projects/truetracker/mainpage.png)
-Main page
 
 ## What it is?
 TrueTracker is my first PHP project created using Symfony framework. It is a simple RMA portal.

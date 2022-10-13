@@ -68,9 +68,9 @@ paginate = 5
   [languages.en]
     languageName = "English"
     title = "Issei.space"
-    subtitle = "A simple, retro theme for Hugo"
+    subtitle = "nerd that like to tinker with stuff"
     owner = ""
-    keywords = ""
+    keywords = "issei.space, linux, laravel, hosting, devops, sysadmin, cloud, proxmox, docker"
     copyright = ""
     menuMore = "Show more"
     readMore = "Read more"

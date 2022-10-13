@@ -2,9 +2,9 @@
 title: "Ducopay"
 date: 2022-08-14T00:24:56+02:00
 draft: false
+cover: "/img/projects/ducopay/firefox_OEhjHgplgP.png"
 tags: ['2021', 'php', 'symfony']
 ---
-![main page](/img/projects/ducopay/firefox_OEhjHgplgP.png)
 ## What it is?
 Ducopay is a simple payment gateway for a internet currency called [Duinocoin](https://duinocoin.com). It features "p2p" payment method. In the first version, the coins were send at first to our account, tax was subtracted, and the rest was send to seller, but later it was removed, and the payment goes directly to seller.
 

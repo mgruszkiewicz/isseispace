@@ -2,9 +2,9 @@
 title: "Bułkowzów"
 date: 2022-08-13T00:24:56+02:00
 draft: false
+cover: "/img/projects/bulkowoz/firefox_ShRDJ0PJhZ.png"
 tags: ['2020', 'php']
 ---
-![main](/img/projects/bulkowoz/firefox_ShRDJ0PJhZ.png)
 ## O projekcie
 
 Aplikacja była moim projektem na zaliczenie praktyk zawodowych w technikum (2020) - miał być to sklep internetowy który umożliwia rezerwacje/zamówienie danego posiłku oraz stworzenie bułki z własnymi składnikami.

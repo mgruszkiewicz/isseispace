@@ -2,10 +2,10 @@
 title: "'Odceglanie' NAS'a Buffalo LS210/LS220"
 date: 2019-11-06T00:24:56+02:00
 draft: false
+cover: "https://i.issei.space/lu47v.png"
 tags: ['pl', 'embedded', 'nas']
 ---
 
-![](https://i.issei.space/lu47v.png)
 
 Ten poradnik powinien działać dla Buffalo LS210/LS220 i rozwiązać problem z siedmiokrotnym miganiem czerwonej diody podczas rozruchu.
 

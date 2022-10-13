@@ -2,9 +2,9 @@
 title: "Mailevi"
 date: 2022-08-13T00:24:56+02:00
 draft: false
+cover: "/img/projects/mailevi/LSi8w6OOQz.png"
 tags: ['2020', 'php']
 ---
-![list of records](/img/projects/mailevi/LSi8w6OOQz.png)
 ## Założenia projektu
 MailEvi to prosty system do ewidencji fizycznej korespondecji oraz przesyłek do danej instytucji.
 Aplikacja została napisana w czystym PHP7, wykorzystuje bazę danych MySQL oraz bibliotekę CSS Bootstrap 4.
