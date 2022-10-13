@@ -1,8 +1,12 @@
 ---
 title: "Ducopay"
 date: 2022-08-14T00:24:56+02:00
+<<<<<<< HEAD
 draft: false
 cover: "/img/projects/ducopay/firefox_OEhjHgplgP.png"
+=======
+draft: true
+>>>>>>> 1c949ff3acdcb01d603205dd3db0aed265e7db01
 tags: ['2021', 'php', 'symfony']
 ---
 ## What it is?
