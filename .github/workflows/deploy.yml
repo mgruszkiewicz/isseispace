@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -30,13 +31,13 @@ jobs:
           name: website
           path: public/
 
-    - uses: actions/checkout@v2
-    - name: rsync deployments
-      uses: burnett01/rsync-deployments@5.2.1
-      with:
-        switches: -avzr --delete
-        path: public/
-        remote_path: /home/issei/web/issei.space/public_html/
-        remote_host: eu-s2.issei.space
-        remote_user: issei
-        remote_key: ${{ secrets.DEPLOY_KEY }}
+      - uses: actions/checkout@v2
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.2.1
+        with:
+          switches: -avzr --delete
+          path: public/
+          remote_path: /home/issei/web/issei.space/public_html/
+          remote_host: eu-s2.issei.space
+          remote_user: issei
+          remote_key: ${{ secrets.DEPLOY_KEY }}
