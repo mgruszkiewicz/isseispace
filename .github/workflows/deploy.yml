@@ -31,7 +31,6 @@ jobs:
           name: website
           path: public/
 
-      - uses: actions/checkout@v2
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2.1
         with:
