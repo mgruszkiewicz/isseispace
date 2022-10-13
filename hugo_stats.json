@@ -28,14 +28,11 @@
       "ul"
     ],
     "classes": [
-      "align-items-center",
       "button",
       "center",
-      "col-lg",
       "container",
       "content",
       "copyright",
-      "d-flex",
       "footer",
       "footer__inner",
       "hanchor",
@@ -43,8 +40,6 @@
       "header__inner",
       "header__logo",
       "headings--one-size",
-      "img-fluid",
-      "justify-content-center",
       "logo",
       "menu",
       "menu-trigger",
@@ -65,10 +60,8 @@
       "post-title",
       "posts",
       "read-more",
-      "row",
       "terms",
-      "terms-title",
-      "vh-100"
+      "terms-title"
     ],
     "ids": [
       "ale-od-początku---co-to-jest-w-ogóle-ta-ramka-zoomme",
@@ -78,7 +71,6 @@
       "hm-przecież-to-allwinner",
       "integrations",
       "jestem-w-androidzie-ale-co-dalej",
-      "main",
       "o-projekcie",
       "screenshots",
       "usecase",
