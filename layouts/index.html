@@ -21,7 +21,7 @@
       integrity="{{ $css.Data.Integrity }}"
     >
 
-    <link rel="preload" href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     {{ $css := resources.Get "css/style.css" }}
     {{ $style := $css | resources.Minify }}
 
@@ -61,7 +61,7 @@
             </p>
         </div>
         <div class="col-lg">
-          {{ $img:= "img/main.jpg" | relURL }}
+          {{ $img:= "img/main.webp" | relURL }}
           <img src='{{$img}}' class="img-fluid" alt="Picture of a girl standing on train station, looking on arrivals table, at night.">
         </div>
       </div>
