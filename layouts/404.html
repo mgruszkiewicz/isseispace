@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ .Title }} :(</title>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="nerd that like to tinker with stuff" />
+    <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#1A94D2" />
+    {{ $css := resources.Get "css/bootstrap.css" | resources.PostCSS }}
+
+    {{ if hugo.IsProduction }}
+      {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
+
+    <link
+      rel="stylesheet"
+      href="{{ $css.RelPermalink }}"
+      integrity="{{ $css.Data.Integrity }}"
+    >
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    {{ $css := resources.Get "css/style.css" }}
+    {{ $style := $css | resources.Minify }}
+
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    
+   
+    <!-- 
+        include a favicon for your site if you have it, else omit the line below 
+        Location of favicon can be in mytheme/static/favicon.ico
+    -->
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+
+
+</head>
+  <body>
+    <div class="container" id="main">
+      <div class="row d-flex align-items-center justify-content-center vh-100">
+        <div>
+          {{ $img:= "img/404.webp" | relURL }}
+          <img src='{{$img}}' class="img-fluid" alt="">
+          <h1>Page not found</h1>
+          <a href="/">Go back to index</a>
+        </div>
+      </div>
+    </div> 
+</html>
