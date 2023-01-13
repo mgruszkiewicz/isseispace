@@ -35,4 +35,5 @@ img {
 @media (prefers-color-scheme: light) {
     #main{color: #000000;}
     body { background-color:  #fff; color: #000000; }
+    a { color: #AA00FF; }
 }
