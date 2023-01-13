@@ -21,7 +21,7 @@
       integrity="{{ $css.Data.Integrity }}"
     >
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="preload" href='https://fonts.googleapis.com/css?family=Raleway&display=swap' as="style" onload="this.onload=null;this.rel='stylesheet'">
     {{ $css := resources.Get "css/style.css" }}
     {{ $style := $css | resources.Minify }}
 
