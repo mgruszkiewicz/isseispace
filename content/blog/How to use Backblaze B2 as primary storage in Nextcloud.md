@@ -1,5 +1,5 @@
 ---
-title: "How to use Backblaze B2 as primary storage in Nextcloud"
+title: "How NOT to use Backblaze B2 as primary storage in Nextcloud"
 date: 2023-01-23T23:30:56+02:00
 draft: false
 cover: "/img/2023/nextcloud-b2-header.png"
