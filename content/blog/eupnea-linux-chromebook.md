@@ -52,6 +52,11 @@ The first thing i wanted to do on my Linuxed chromebook was installation Steam. 
 The game i wanted to try the most was Stardew Valley - and it works straight away!
 But, i had before played this game via Crostini, and it was also working fine under ChromeOS.
 
+| ![stardew vally running on eupnea linux](/img/2023/eupnea-sv.webp) |
+|:--:|
+| HP Chromebook 13 G6 running Steam and Stardew Valley on Arch Linux with Eupnea kernel + necessary fastfetch |
+
+
 Next thing was a internet browsing using Firefox, as day-to-day, it is my primary browser. It was also running pretty good, no stutters while playing youtube videos, Discord is also running “ok” - sometimes it takes a couple of seconds to switch serve. Netflix, after installing ‘netflix 1080p’ extension, also work great.
 
 I’ve been running arch on my chromebook for about a month now, and i’m pretty happy with the result. It really brings up the usability of the laptop for me. The battery is also performing on par with the chromeos.

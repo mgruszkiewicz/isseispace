@@ -27,7 +27,13 @@
       "script",
       "span",
       "strong",
+      "table",
+      "tbody",
+      "td",
+      "th",
+      "thead",
       "title",
+      "tr",
       "ul"
     ],
     "classes": [
