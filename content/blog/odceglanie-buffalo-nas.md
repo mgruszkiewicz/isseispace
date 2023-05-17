@@ -2,7 +2,7 @@
 title: "'Odceglanie' NAS'a Buffalo LS210/LS220"
 date: 2019-11-06T00:24:56+02:00
 draft: false
-cover: "https://i.issei.space/lu47v.png"
+cover: "/img/lu47v.webp"
 tags: ['pl', 'embedded', 'nas']
 ---
 
