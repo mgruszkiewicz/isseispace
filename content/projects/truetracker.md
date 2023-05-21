@@ -2,7 +2,7 @@
 title: "TrueTracker"
 date: 2022-08-14T00:24:56+02:00
 draft: false
-cover: "/img/projects/truetracker/mainpage.png"
+cover: "images/projects/truetracker/mainpage.png"
 tags: ['2021', 'php', 'symfony']
 ---
 
@@ -30,29 +30,29 @@ Frontend is using Bootstrap 5 + jQuery
 * Automatic updates
 
 ## Screenshots
-![user list](/img/projects/truetracker/firefox_8TiVib6zRY.png)
+![user list](images/projects/truetracker/firefox_8TiVib6zRY.png)
 List of users  
 
-![example email notification](/img/projects/truetracker/example_email.png)
+![example email notification](images/projects/truetracker/example_email.png)
 Example email notification  
 
-![example report](/img/projects/truetracker/example_raport.png)
+![example report](images/projects/truetracker/example_raport.png)
 Example of exported status report  
 
-![searchbar](/img/projects/truetracker/searchbar.png)
+![searchbar](images/projects/truetracker/searchbar.png)
 Search bar can search by serial number, customer email or phone number, repair order descriptions  
 
-![repair orders](/img/projects/truetracker/repair_order.png)
+![repair orders](images/projects/truetracker/repair_order.png)
 List of repair orders  
 
-![predefined states](/img/projects/truetracker/firefox_oWZE66Z0RX.png)
+![predefined states](images/projects/truetracker/firefox_oWZE66Z0RX.png)
 Predefined states  
 
-![adding new status to repair](/img/projects/truetracker/add_new_status.png)
+![adding new status to repair](images/projects/truetracker/add_new_status.png)
 Adding new status to repair order. Status can be visible for customer or it can be set to interal (only employees can see them)
 
-![repair order view for shop](/img/projects/truetracker/shop_repair_view.png)
+![repair order view for shop](images/projects/truetracker/shop_repair_view.png)
 Repair order view for shop  
 
-![repair view for customer](/img/projects/truetracker/repair_view_customer.png)
+![repair view for customer](images/projects/truetracker/repair_view_customer.png)
 Repair order view for customer  

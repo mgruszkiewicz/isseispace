@@ -2,7 +2,7 @@
 title: "Mailevi"
 date: 2022-08-13T00:24:56+02:00
 draft: false
-cover: "/img/projects/mailevi/LSi8w6OOQz.png"
+cover: "images/projects/mailevi/LSi8w6OOQz.png"
 tags: ['2020', 'php']
 ---
 ## Założenia projektu
@@ -21,11 +21,11 @@ Projekt powstał na zlecenie instytucji i miał być zastępstwem dla arkusza ka
 * Podział na konta administratora oraz pracownika
 * Widok dla administratora kto dodał dany rekord, data ostatniego logowania oraz możliwość zmiany haseł użytkowników.
 
-![login screen](/img/projects/mailevi/asSLoPNQ2k.png)
+![login screen](images/projects/mailevi/asSLoPNQ2k.png)
 Login screen
 
-![csv export](/img/projects/mailevi/explorer_Y2GltzWAyR.png)
+![csv export](images/projects/mailevi/explorer_Y2GltzWAyR.png)
 Eksport do pliku CSV
 
-![details](/img/projects/mailevi/v8V1yj6D8e.png)
+![details](images/projects/mailevi/v8V1yj6D8e.png)
 Dodatkowe informacje o korespondencji
