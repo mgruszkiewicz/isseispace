@@ -2,7 +2,7 @@
 title: "'Hackowanie' ZOOMki - czyli co można zrobić z ramką na zdjęcia Zoom.me"
 date: 2020-11-24T00:24:56+02:00
 draft: false
-cover: "/img/nnKHrwB6.webp"
+cover: "images/2020-11-24-zoomka/cover.webp"
 tags: ['pl', 'android']
 ---
 

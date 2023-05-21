@@ -2,7 +2,7 @@
 title: "How to use Backblaze B2 as primary storage in Nextcloud"
 date: 2023-01-23T23:30:56+02:00
 draft: false
-cover: "/img/2023/nextcloud-b2-header.webp"
+cover: "images/2023-01-23-nextcloud-b2/cover.png"
 tags: ['en', 'object-storage']
 ---
 
@@ -14,15 +14,15 @@ While installing Nextcloud just pick default storage place for now.
 If you don’t already have Backblaze account, you can register [here](https://www.backblaze.com/b2/sign-up.html). Backblaze gives 10GB of free storage + 1GB traffic per day for every user.  
 Note: make sure you select correct region, as of right now, accounts can’t be moved between regions
 
-![register form select region](/img/2023/nextcloud-b2-1.png)
+![register form select region](images/2023-01-23-nextcloud-b2/nextcloud-b2-1.png)
 
 Next, after logging in, click on Buckets → Create a Bucket
 
-![create bucket 1](/img/2023/nextcloud-b2-2.png)
+![create bucket 1](images/2023-01-23-nextcloud-b2/nextcloud-b2-2.png)
 
 Enter unique bucket name, and set “Files in Bucket are” “Private”, as we don’t want to access our files publicly from URL.
 
-![create bucket 2](/img/2023/nextcloud-b2-3.png)
+![create bucket 2](images/2023-01-23-nextcloud-b2/nextcloud-b2-3.png)
 
 Click on “Create a Bucket”
 
@@ -30,19 +30,19 @@ Click on “Create a Bucket”
 
 Next, navigate to Account → App Keys
 
-![create key 1](/img/2023/nextcloud-b2-4.png)
+![create key 1](images/2023-01-23-nextcloud-b2/nextcloud-b2-4.png)
 
 On Application Keys page, click on “Add a New Application Key”
 
-![create key 2](/img/2023/nextcloud-b2-5.png)
+![create key 2](images/2023-01-23-nextcloud-b2/nextcloud-b2-5.png)
 
 In popup, enter name of key, allow access only to the bucket we created, and allow list all bucket names for S3 compatibility.
 
-![create key 3](/img/2023/nextcloud-b2-6.png)
+![create key 3](images/2023-01-23-nextcloud-b2/nextcloud-b2-6.png)
 
 After clicking on Create New Key, you will see your new keyID and applicationKey. Note - it will be displayed only once.
 
-![create key 4](/img/2023/nextcloud-b2-7.png)
+![create key 4](images/2023-01-23-nextcloud-b2/nextcloud-b2-7.png)
 
 ## Configuring Nextcloud
 
@@ -66,7 +66,7 @@ Go to `config/config.php`file on your Nextcloud server and to `$CONFIG` array ad
 
 Replace `nextcloud-testing` with the name of your bucket. Hostname should be the endpoint of bucket. 
 
-![nextcloud endpoint config](/img/2023/nextcloud-b2-8.png)
+![nextcloud endpoint config](images/2023-01-23-nextcloud-b2/nextcloud-b2-8.png)
 
 `config.php` should look something like that
 

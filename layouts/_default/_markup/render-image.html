@@ -1,5 +1,11 @@
+{{- $img := resources.GetMatch .Destination -}}
+{{- if resources.GetMatch .Destination }}
+    {{- $img = ((resources.GetMatch .Destination).Resize "800x webp").RelPermalink -}}
+  {{- else -}}
+    {{- $img = absURL .Destination -}}
+  {{- end -}}
 <img
-  src="{{ .Destination | safeURL }}"
+  src="{{ $img }}"
   alt="{{ .Text }}"
   loading="lazy"
 />

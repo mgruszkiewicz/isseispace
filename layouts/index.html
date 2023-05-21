@@ -61,8 +61,9 @@
             </p>
         </div>
         <div class="col-lg">
-          {{ $img:= "img/main.webp" | relURL }}
-          <img src='{{$img}}' class="img-fluid" alt="Picture of a girl standing on train station, looking on arrivals table, at night.">
+          {{ $img:= resources.Get "images/index/main.jpg" }}
+          {{ $img := $img.Resize "600x" }}
+          <img src='{{ $img.RelPermalink }}' class="img-fluid" alt="Picture of a girl standing on train station, looking on arrivals table, at night.">
         </div>
       </div>
     </div> 

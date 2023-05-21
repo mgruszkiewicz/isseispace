@@ -2,7 +2,7 @@
 title: "Project Eupnea - native linux for chromebooks"
 date: 2023-05-15T10:40:56+02:00
 draft: false
-cover: "/img/2023/eupnea.webp"
+cover: "images/2023-05-15-eupnea/cover.webp"
 tags: ['chromebook', 'linux']
 ---
 
@@ -52,7 +52,7 @@ The first thing i wanted to do on my Linuxed chromebook was installation Steam. 
 The game i wanted to try the most was Stardew Valley - and it works straight away!
 But, i had before played this game via Crostini, and it was also working fine under ChromeOS.
 
-| ![stardew vally running on eupnea linux](/img/2023/eupnea-sv.webp) |
+| ![stardew vally running on eupnea linux](images/2023-05-15-eupnea/eupnea-sv.webp) |
 |:--:|
 | HP Chromebook 13 G6 running Steam and Stardew Valley on Arch Linux with Eupnea kernel + necessary fastfetch |
 
