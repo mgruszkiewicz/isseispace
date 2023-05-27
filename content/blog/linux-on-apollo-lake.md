@@ -2,7 +2,7 @@
 title: "Installing Linux on Chromebook (and other Apollo Lake devices)"
 date: 2023-05-23T00:24:56+02:00
 draft: false
-cover: "images/2023-05-23-linux-on-apollo-lake/cover.webp"
+cover: "images/2023-05-23-linux-on-apollo-lake/cover.jpg"
 tags: ['linux', 'chromebook']
 ---
 
