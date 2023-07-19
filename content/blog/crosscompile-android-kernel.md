@@ -1,7 +1,7 @@
 ---
 title: "Noob is trying to build Android kernel 4.14.x"
 date: 2023-07-16T14:37:07+02:00
-draft: true
+draft: false
 tags: ['linux', 'android', 'en']
 ---
 At the beggining of this article i would like to mention that i'm a noob when it comes to android custom kernel or rom development, so some of this informations can be obvious for some of you, but it was relatively hard to find one place with up-to-date information on this topic.
@@ -12,7 +12,7 @@ My current phone is Xiaomi Mi 9 - i'm very happy with this phone, it is more tha
 * The screenshots are a bit darker than on screen (as the screenshot is captured at the first frame of the animation...)
 * Sometimes the MIUI Gallery app is trying to index photos, and it might come across corrupted image - in that case it would just drain your battery and peg CPU retrying - solution: factory reset the phone or disallow access to storage/uninstall the appear
 
-I decided that life is too short to bother with buggy software that i don't have a control on, and i didn't want to change phone, because beside this grapes it was working great!
+I decided that life is too short to bother with buggy software that i don't have a control on, and i didn't want to change phone (..aand probably i just like to mess with stuff), because beside this grapes it was working great!
 I unlocked the bootloader, and install PixelOS 13 - since then - the phone is running better than on stock MIUI (feels quicker + battery last longer). Huge thanks to the mainteiner of PixelOS for cepheus - [balgxmr](https://forum.xda-developers.com/m/balgxmr.9196567/).
 
 So - why i want to build kernel from scratch? Because after last OTA update there was no KernelSU-compatible kernel on telegram channel. Yes - i could just ask if he could release flashable zip with KSU, but why not try to build it myself?
@@ -33,11 +33,11 @@ As a example for this writeup i will be using [kernel_xiaomi_cepheus](https://gi
 
 using `--depth 1` to only download latest changes, as I only want to compile the kernel without any modifications (as the kernel from balgxmr already have a branch with KernelSU patch).
 ```
-mkdir workdir && cd workdir
+mkdir -p workdir && cd workdir
 git clone https://github.com/balgxmr/kernel_xiaomi_cepheus --depth 1
 git clone https://github.com/balgxmr/anykernel3 anykernel
-git clone https://github.com/threadcolor/aarch64-linux-gnu --depth 1
-git clone https://github.com/threadcolor/arm-linux-gnueabi --depth 1
+git clone https://github.com/radcolor/aarch64-linux-gnu --depth 1
+git clone https://github.com/radcolor/arm-linux-gnueabi --depth 1
 chmod +x -R kernel_xiaomi_cepheus/build.sh kernel_xiaomi_cepheus/scripts/
 ```
 
@@ -77,7 +77,7 @@ CMD tail -f /dev/null
 
 ```
 My `docker-compose.yaml`  
-we can also just use `docker run`, as there would be only one container, but to keep it simple with volume mounts and variables i will use docker-compose
+we can also just use `docker run`, as there would be only one container, but to keep it simple with volume mounts and building i will use docker-compose
 ```
 # workdir/docker-compose.yaml
 version: '3.7'
@@ -88,14 +88,10 @@ services:
     build:
       context: .
     volumes:
-      - ./kernel_xiaomi_cepheus:/work/kernel_xiaomi_cepheus
-      - ./aarch64-linux-gnu:/work/aarch64-linux-gnu
-      - ./arm-linux-gnueabi:/work/arm-linux-gnueabi
-      - ./anykernel:/work/anykernel
-      - ./out:/work/out
+      - ./:/work/
 ```
 
-Build and start the container
+Build and enter the container
 ```
 docker-compose up -d
 docker exec -it builder bash
