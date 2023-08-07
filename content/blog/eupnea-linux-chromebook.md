@@ -6,6 +6,10 @@ cover: "images/2023-05-15-eupnea/cover.webp"
 tags: ['chromebook', 'linux']
 ---
 
+**UPDATE 2023-08-07**: Eupnea Project has been discontinued, new install of Depthboot are not recommended, if you can, just use UEFI + audio fixes. Also their Discord and Github was compromised. If you are currenty using Depthboot it is recommended to remove their repository from package manager list. 
+
+---
+
 Let me start with that - second-hand chromebooks are awesome value for cheap, long-lasting battery, portable Netflix and SSH machine.
 
 I’ve got my Chromebook about a year ago for 55 USD, it is a HP Chromebook 11a G6. I love how lightweight it is and that i can charge it from literally everything using USB-C ports (for real - it can even take charge from normal 5V USB charger). And the battery is awesome, it lasts a whole working day of moderate use.
@@ -28,7 +32,7 @@ Unfortunately, the project was archived due to lack of active maintenance.
 
 ## Project Eupnea
 
-[Eupnea](https://eupnea-linux.github.io/) is a fork of Breath, featuring all the features from Breath.
+[Eupnea](https://github.com/eupnea-linux-backup) is a fork of Breath, featuring all the features from Breath.
 
 I decided to give it a try, first try was with EupneaOS - their own distro with a goal of mimicking ChromeOS look, and even Android emulator (via Waydroid). The distro is using KDE Plasma as a Desktop Environment.
 I was pretty amazed on how booting process was painless - all it took was to enable developer mode in chromeOS and enable debugging options (that allow access to ChromeOS root shell), executing command that allow booting from USB unsigned OS, quick reboot, pressing CTRL+U, and in a couple of minutes i was on Linux KDE desktop running live from USB on my chromebook!

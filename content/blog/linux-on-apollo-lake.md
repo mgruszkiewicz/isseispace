@@ -52,10 +52,11 @@ To have working audio on our linuxed chromebook we will use `audio-script` from 
 You need to have `git` and Python <3.10 installed.
 
 ```bash
-git clone https://github.com/eupnea-linux/audio-scripts
+git clone https://github.com/eupnea-linux-backup/audio-scripts
 cd audio-scripts
 ./setup-audio --force-avs-install
 ```
+**UPDATE 2023-08-07**: Due to Eupnea Project drama + project abondance you might want to use [WierdTreeThing audio-scripts fork](https://github.com/WeirdTreeThing/chromebook-linux-audio). I did not tried it yet, but it should work the same way.
 
 The `--force-avs-install` is needed because AVS driver might be unstable and might damage speakers if you set the volume too high.
 
