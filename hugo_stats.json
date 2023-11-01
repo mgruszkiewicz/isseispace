@@ -87,11 +87,13 @@
       "previous",
       "read-more",
       "row",
+      "table-of-contents",
       "terms",
       "terms-title",
       "vh-100"
     ],
     "ids": [
+      "TableOfContents",
       "ale-od-początku---co-to-jest-w-ogóle-ta-ramka-zoomme",
       "alternative-way-using-docker",
       "audio-setup",
