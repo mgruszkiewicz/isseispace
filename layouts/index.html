@@ -27,7 +27,6 @@
 
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     
-   
     <!-- 
         include a favicon for your site if you have it, else omit the line below 
         Location of favicon can be in mytheme/static/favicon.ico
@@ -38,34 +37,37 @@
 </head>
   <body>
     <div class="container" id="main">
-      <div class="row d-flex align-items-center justify-content-center vh-100">
-        <div class="col-lg">
-            <h1>
-              Hello World!<br>
-              I'm Issei
-            </h1>
-            <p>
-              DevOps, System Administrator<br>
-              Software Developer (PHP, Laravel, some Python and Django)
-              <br><br>
-              My side hobby is tinkering with electronics and microcontrollers
-              <br><br>
-              See some of my <a href="/projects" alt="link to project section on my blog">projects</a>, you can find my blog <a href="/blog" alt="link to my blog">here</a>
-              <br><br>
-              Find me on <a href="https://github.com/ihyoudou" taget="_blank">Github</a>,
-              <a rel="me" href="https://101010.pl/@moira">Mastodon</a>,
-              <a href="https://twitter.com/isseihere" target="_blank">Twitter</a>,
-              send me a email on <a href="mailto:hello@issei.space">hello@issei.space</a>
+      <main>
+        <div class="row d-flex align-items-center justify-content-center vh-100">
+          <div class="col-lg">
+              <h1>
+                Hello World!<br>
+                I'm Issei
+              </h1>
+              <p>
+                DevOps, System Administrator<br>
+                Software Developer (PHP, Laravel, some Python and Django)
+                <br><br>
+                My side hobby is tinkering with electronics and microcontrollers
+                <br><br>
+                See some of my <a href="/projects" alt="link to project section on my blog">projects</a>, you can find my blog <a href="/blog" alt="link to my blog">here</a>
+                <br><br>
+                Find me on <a href="https://github.com/ihyoudou" taget="_blank">Github</a>,
+                <a rel="me" href="https://101010.pl/@moira">Mastodon</a>,
+                <a href="https://twitter.com/isseihere" target="_blank">Twitter</a>,
+                send me a email on <a href="mailto:hello@issei.space">hello@issei.space</a>
 
-              <br><br>
-              My TeamSpeak server: <a target="_blank" href="ts3server://ts.issei.space" alt="link to my teamspeak server">ts.issei.space</a> (<a href="https://rank.issei.space" target="_blank">stats</a>)
-            </p>
+                <br><br>
+                My TeamSpeak server: <a target="_blank" href="ts3server://ts.issei.space" alt="link to my teamspeak server">ts.issei.space</a> (<a href="https://rank.issei.space" target="_blank">stats</a>)
+              </p>
+          </div>
+          <div class="col-lg">
+            {{ $img:= resources.Get "images/index/main.jpg" }}
+            {{ $img := $img.Resize "600x" }}
+            <img src='{{ $img.RelPermalink }}' class="img-fluid" alt="Picture of a girl standing on train station, looking on arrivals table, at night.">
+          </div>
         </div>
-        <div class="col-lg">
-          {{ $img:= resources.Get "images/index/main.jpg" }}
-          {{ $img := $img.Resize "600x" }}
-          <img src='{{ $img.RelPermalink }}' class="img-fluid" alt="Picture of a girl standing on train station, looking on arrivals table, at night.">
-        </div>
-      </div>
+      </main>
     </div> 
+  </body>
 </html>
