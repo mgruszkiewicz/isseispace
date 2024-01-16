@@ -1,6 +1,7 @@
 ---
 title: "Setup proxmox-csi-driver in K3S Kubernetes Cluster using FluxCD"
 date: 2024-01-16T21:24:07+02:00
+cover: "images/2024-01-16-proxmox-csi-driver/cover.png"
 draft: false
 tags: ['kubernetes', 'k8s', 'proxmox', 'en']
 ---
