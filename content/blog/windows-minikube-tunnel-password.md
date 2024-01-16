@@ -3,7 +3,7 @@ title: "Password prompt while trying to use 'minikube tunnel' (docker@127.0.0.1'
 date: 2022-11-03T10:40:56+02:00
 draft: false
 cover: "images/2022-11-03-minikube-tunnel/cover.webp"
-tags: ['minikube', 'k8s', 'windows']
+tags: ['minikube', 'kubernetes', 'k8s', 'windows']
 ---
 ## Issue
 
