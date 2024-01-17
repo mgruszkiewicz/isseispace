@@ -274,3 +274,9 @@ storage-test-0   Bound    pvc-08fa4889-3749-40a3-85cb-ddf273d9ac21   2Gi        
 
 In Proxmox WebUI we can also see that additional virtual disk was also attached
 ![Screenshot of Proxmox WebUI, showing hardware specification of one of kubernetes nodes with PVC attached](images/2024-01-16-proxmox-csi-driver/Screenshot_20240116_212728.png)
+
+Note: Make sure that after adding new PVC the VM have corrent boot order. In my case it did change, and after a node reboot the VM did not boot from OS disk
+![Screenshot of Proxmox WebUI, showing virtual machine hard drive boot order](images/2024-01-16-proxmox-csi-driver/Screenshot_20240117_172827.png)
+
+Cover photo by [Maria Teneva](https://unsplash.com/@miteneva?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-body-of-water-surrounded-by-mountains-under-a-cloudy-sky-SXwCyG4FoPk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+  
