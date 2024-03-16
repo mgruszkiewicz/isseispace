@@ -278,5 +278,15 @@ In Proxmox WebUI we can also see that additional virtual disk was also attached
 Note: Make sure that after adding new PVC the VM have corrent boot order. In my case it did change, and after a node reboot the VM did not boot from OS disk
 ![Screenshot of Proxmox WebUI, showing virtual machine hard drive boot order](images/2024-01-16-proxmox-csi-driver/Screenshot_20240117_172827.png)
 
+## Troubleshooting
+
+If you get an error like
+```
+Warning  FailedScheduling  38s   default-scheduler  0/2 nodes are available: 2 node(s) did not have enough free storage. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.
+```
+Make sure that cluster nodes can reach Proxmox WebUI. In my case, the issue was caused by proxmox datacenter-level firewall on a host where I forgot to add a rule which allows access to webui (tcp 8006) from a second internal network.  
+
+
+
 Cover photo by [Maria Teneva](https://unsplash.com/@miteneva?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-body-of-water-surrounded-by-mountains-under-a-cloudy-sky-SXwCyG4FoPk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
   
