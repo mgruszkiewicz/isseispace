@@ -108,11 +108,13 @@ sudo cp pc /usr/share/X11/xkb/symbols/
 sudo rm -rf /var/lib/xkb/*
 ```
 
-On my EndeavourOS (xfce4) install out-of-the-box keyboard brightness control was not working despite enabling that option in power management (and working in the battery settings), so i installed `light` and just bind these buttons to commands
+On my EndeavourOS (xfce4) install out-of-the-box keyboard brightness control was not working despite enabling that option in power management (and working in the battery settings), so i installed `light` (using AUR) and just bind these buttons to commands.
 
-By default, `light` require root, but you can `sudo chmod +s /usr/bin/light`, and it should be able to control backlight.
+To use `light` as a regular user (without sudo), you need to be in `video` user group (`sudo usermod -aG video $(whoami)`). 
 
 ![XFCE keybinding settings](images/2023-05-23-linux-on-apollo-lake/keybinding.png)
+
+**Update**: `light` [is now orphaned](https://aur.archlinux.org/packages/light?O=10#comment-957514).
 
 ## Enjoy?
 
