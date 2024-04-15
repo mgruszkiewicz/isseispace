@@ -1,5 +1,5 @@
 ---
-title: "Tworzenie własnej instancji Lemmy używając Dockera"
+title: "Własny zdecentralizowany Reddit, czyli jak stworzyć własną instancje Lemmy używając Dockera"
 date: 2024-04-09T00:24:56+02:00
 draft: false
 cover: "images/2024-04-09-lemmy/cover.jpg"
@@ -88,7 +88,6 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
         hostname: lemmy
         restart: always
         logging: *default-logging
-        environment:
         volumes:
           - ./lemmy.hjson:/config/config.hjson:Z
         depends_on:
@@ -114,7 +113,6 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
         hostname: pictrs
         # we can set options to pictrs like this, here we set max. image size and forced format for conversion
         # entrypoint: /sbin/tini -- /usr/local/bin/pict-rs -p /mnt -m 4 --image-format webp
-        environment:
         user: 991:991
         volumes:
           - ./volumes/pictrs:/mnt:Z
@@ -129,6 +127,9 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
         image: docker.io/postgres:15-alpine
         hostname: postgres
         environment:
+          - POSTGRES_USER=lemmy
+          - POSTGRES_PASSWORD=password
+          - POSTGRES_DB=lemmy
         volumes:
           - ./volumes/postgres:/var/lib/postgresql/data:Z
         restart: always
@@ -141,7 +142,7 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
     W folderze w którym utworzyłeś `docker-compose.yml`, utwórz plik `lemmy.hjson` - jest to główny plik konfiguracyjny lemmy, gdzie skonfigurujemy dane dostępowe do bazy danych, pict-rs, hostname oraz opcjonalne dane SMTP.
 
     W podstawowej konfiguracji, jedyną rzeczą jaką należy tutaj zmienić, jest `hostname` (powinien odpowiadać domenie pod którą chcesz wystawić instancję) oraz `pictrs.api_key` (powinien się pokrywać z api_key zdefiniowanym w `docker-compose`)
-    ```
+    ```json
     # lemmy.hjson
     {
       # for more info about the config, check out the documentation
@@ -171,6 +172,7 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
       }
     }
     ```
+    Dla bezpieczeństwa, sugeruję zmienić domyślne dane, np. hasło do bazy postgres oraz apiKey do pictrs
     Zajrzyj na [join-lemmy.org/docs/administration/configuration.html](https://join-lemmy.org/docs/administration/configuration.html) aby dowiedzieć się o reszcie dostępnych opcjach konfiguracjnych.
 
     Pobierz przykładową konfiguracje nginx
@@ -179,7 +181,7 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
     ```
     Jeżeli masz inne reverse proxy, możesz pozbyć się kontenera proxy z `docker-compose` i wykorzystać ten `nginx.conf` jako baza.
     
-    Aby federacja działała poprawnie, potrzebujemy mieć SSL, np. za pomocą LetsEncrypt.
+    Aby federacja działała poprawnie, potrzebujemy mieć SSL, np. za pomocą LetsEncrypt, w zależności od tego jak chcesz wystawić Lemmy (za reverse proxy, wykorzystać nginx w docker-compose jako główny), musisz odpowiednio zmodyfikować konfiguracje nginx.
 
 5. Ustaw poprawne uprawnienia dla volumes
     ```bash
@@ -192,5 +194,23 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
     ```bash
     docker-compose up -d
     ```
-    Po chwili interfejs lemmy-ui powinien być dostępny - powineneś mieć opcje aby założyć konto administratora oraz opcje czy rejestracja powinna być otwarta i czy włączyć captche.
+    | ![scrrenshot of lemmy setup screen](images/2024-04-09-lemmy/Screenshot_20240415_231154.png) |
+    | :--: |
+    | Po chwili interfejs lemmy-ui powinien być dostępny - powineneś mieć opcje aby założyć konto administratora oraz opcje konfiguracyjne site, jak nazwa, opis, czy instancja ma mieć otwartą rejestrację oraz ustawienia federacji. | 
+
+    Domyślnie nie musisz zmieniać żadnych opcji federacji, sugeruję zostawić *Registration Mode* na *Require registration application*, aby nasza instancja nie została źródłem spamu
+
+
     Następnie powinniśmy już mieć możliwość subskrybowania społeczności 🎉
+    ![screenshot of empty lemmy instance](images/2024-04-09-lemmy/Screenshot_20240415_231816.png)
+
+7. Znajdowanie społeczności
+    Domyślnie nie będziesz widział żadnych społeczności - musisz je najpierw znaleźć - do znajdowania społeczności Lemmy możesz wykorzystać [**Lemmy Explorer**](https://lemmyverse.net/communities)
+    ![lemmy explorer](images/2024-04-09-lemmy/Screenshot_20240415_225802.png)
+    Skopiuj link do społeczności (przykładowo `!nazwa@instacja.tld`), przejdź do wyszukiwarki na swojej instancji Lemmy i wyszukaj społeczność.
+    Możliwe że za pierwszym razem od razu twoja instancja nie pokaże wyszukiwanej społeczności, spróbuj ponownie kliknąć na wyszukiwanie.   
+    ![screenshot showing search screen of lemmy instance, in search result showing Technology community from lemmy.world instance](images/2024-04-09-lemmy/Screenshot_20240415_232056.png)
+    Następnie przejdź do społeczności i ją zasubskrybuj, po pewnym czasie na twojej instancji powinny się pokazywać posty z danej społeczeności..
+    ![community subscribe button](images/2024-04-09-lemmy/Screenshot_20240415_232342.png)
+
+    Jeżeli po dłuższym czasie nadal nie pojawiają ci się posty z instancji zewnętrznych, sprawdź logi nginx, oraz czy na pewno twoja instancja jest poprawnie dostępna z internetu/posiada poprawnie skonfigurowane HTTPS
