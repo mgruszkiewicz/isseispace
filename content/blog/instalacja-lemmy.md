@@ -1,6 +1,6 @@
 ---
 title: "Własny zdecentralizowany Reddit, czyli jak stworzyć własną instancje Lemmy używając Dockera"
-date: 2024-04-16T21:24:56+02:00
+date: 2024-04-16T20:00:00+02:00
 draft: false
 cover: "images/2024-04-09-lemmy/cover.png"
 tags: ['pl', 'fediverse']
@@ -172,7 +172,7 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
       }
     }
     ```
-    Dla bezpieczeństwa, sugeruję zmienić domyślne dane, np. hasło do bazy postgres oraz apiKey do pictrs
+    Dla bezpieczeństwa, sugeruję zmienić domyślne dane, np. hasło do bazy postgres oraz apiKey do pictrs.  
     Zajrzyj na [join-lemmy.org/docs/administration/configuration.html](https://join-lemmy.org/docs/administration/configuration.html) aby dowiedzieć się o reszcie dostępnych opcjach konfiguracjnych.
 
     Pobierz przykładową konfiguracje nginx
@@ -204,16 +204,20 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
     Następnie powinniśmy już mieć możliwość subskrybowania społeczności 🎉
     ![screenshot of empty lemmy instance](images/2024-04-09-lemmy/Screenshot_20240415_231816.png)
 
-7. Znajdowanie społeczności
+7. Znajdowanie społeczności  
     Domyślnie nie będziesz widział żadnych społeczności - musisz je najpierw znaleźć - do znajdowania społeczności Lemmy możesz wykorzystać [**Lemmy Explorer**](https://lemmyverse.net/communities)
     ![lemmy explorer](images/2024-04-09-lemmy/Screenshot_20240415_225802.png)
     Skopiuj link do społeczności (przykładowo `!nazwa@instacja.tld`), przejdź do wyszukiwarki na swojej instancji Lemmy i wyszukaj społeczność.
     Możliwe że za pierwszym razem od razu twoja instancja nie pokaże wyszukiwanej społeczności, spróbuj ponownie kliknąć na wyszukiwanie.   
     ![screenshot showing search screen of lemmy instance, in search result showing Technology community from lemmy.world instance](images/2024-04-09-lemmy/Screenshot_20240415_232056.png)
-    Następnie przejdź do społeczności i ją zasubskrybuj, po pewnym czasie na twojej instancji powinny się pokazywać posty z danej społeczeności..
+    
+    Następnie przejdź do społeczności i ją zasubskrybuj, po pewnym czasie na twojej instancji powinny się pokazywać posty z danej społeczeności.
     ![community subscribe button](images/2024-04-09-lemmy/Screenshot_20240415_232342.png)
 
+
     Jeżeli po dłuższym czasie nadal nie pojawiają ci się posty z instancji zewnętrznych, sprawdź logi nginx, oraz czy na pewno twoja instancja jest poprawnie dostępna z internetu/posiada poprawnie skonfigurowane HTTPS
+
+
 
 Cover background: [Pawel Czerwinski](https://unsplash.com/@pawel_czerwinski?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [unsplash](https://unsplash.com/photos/a-close-up-of-a-purple-background-with-wavy-lines-hOYHAdgbTr0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
   
