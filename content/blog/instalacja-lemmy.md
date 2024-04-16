@@ -1,8 +1,8 @@
 ---
 title: "Własny zdecentralizowany Reddit, czyli jak stworzyć własną instancje Lemmy używając Dockera"
-date: 2024-04-09T00:24:56+02:00
+date: 2024-04-16T21:24:56+02:00
 draft: false
-cover: "images/2024-04-09-lemmy/cover.jpg"
+cover: "images/2024-04-09-lemmy/cover.png"
 tags: ['pl', 'fediverse']
 ---
 
@@ -12,7 +12,7 @@ W tym wpisie postaram się przybliżyć proces instalacji własnej instancji Lem
 Lemmy to zdecentralizowany odpowiednik Reddita/agregatora linków/forum. Istnieje podział na community, możliwość upvote/downvote oraz komentowania postów. 
 
 ## Czym jest ten fediverse?
-Fediverse (Fediwersum) to w skrócie zbiór zdecentralizowanych serwisów społecznościowych które korzystają z ustandaryzowanego protokołu do komunikacji z sobą. Działaniem bardzo przypomina email - czyli przykładowo posiadając skrzynkę pocztową na gmailu, możemy bez problemu pisać i odbierać maile od użytkownika o2 - tak samo jest tutaj, np. jeżeli ktoś opublikuje wpis na Lemmy, to inny użytkownik który np. używa Mastadon, zobaczy ten post oraz może z nim prowadzić interakcje.
+Fediverse (Fediwersum) to w skrócie zbiór zdecentralizowanych serwisów społecznościowych które korzystają z ustandaryzowanego protokołu do komunikacji z sobą. Działaniem bardzo przypomina email - czyli przykładowo posiadając skrzynkę pocztową na gmailu, możemy bez problemu pisać i odbierać maile od użytkownika o2 - tak samo jest tutaj, np. jeżeli ktoś opublikuje wpis na Lemmy, to inny użytkownik który np. używa Mastodon, zobaczy ten post oraz może z nim prowadzić interakcje.
 Plusem fediverse jest to, że nie ma jednego centralnego serwera.
 
 | ![screenshot showing the same post on lemmy.ml and sh.itjust.works](images/2024-04-09-lemmy/Screenshot_20240409_234719.png) | 
@@ -20,11 +20,11 @@ Plusem fediverse jest to, że nie ma jednego centralnego serwera.
 | Ten sam post z community !linux@lemmy.ml widoczny na lemmy.ml oraz sh.itjust.works |
 
 ## Po co tworzyć własną instancje?
-Tak na prawdę - jeżeli chcesz tylko spróbować fediverse, nie musisz tworzyć własnej instancji - najlepiej znaleźć instancje która ma otwartą rejestrację lub poprosić o dostęp. Jest wiele list instancji np. [joinfediverse.wiki](https://joinfediverse.wiki/Instances) lub [fediverse.to](https://www.fediverse.to/).
+Jeżeli chcesz tylko spróbować fediverse, nie musisz tworzyć własnej instancji - najlepiej znaleźć instancje która ma otwartą rejestrację lub poprosić o dostęp. Jest wiele list instancji np. [joinfediverse.wiki](https://joinfediverse.wiki/Instances) lub [fediverse.to](https://www.fediverse.to/).
 
 Tworzenie własnej instancji ma sens, jeżeli:
 * chcesz prowadzić większe community i mieć nad nim pełną kontrolę
-* chcesz mieć niezależną, prywatną instancje
+* chcesz mieć niezależną, prywatną instancje, za którą odpowiadasz tylko Ty
 
 ## Co jest potrzebne do stworzenia własnej instancji?
 Do stworzenia własnej instancji nie potrzeba dużo - potrzebujesz tylko domeny (lub subdomeny) oraz serwer z wyjściem na świat (otwartym portem 80/443). Lemmy nie wymaga dużo zasobów, ja moją małą instancje hostuje na serwerze z 2vCPU, 2GB RAM oraz 20GB dysku.
@@ -34,7 +34,7 @@ Do stworzenia własnej instancji nie potrzeba dużo - potrzebujesz tylko domeny 
 Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza metoda instalacji oraz aktualizacji, dodatkowo nie ma większego znaczenia z jakiego systemu operacyjnego korzystasz na hoście. Ten tutorial będzie przedstawiał kroki na Debianie. 
 
 1. Zainstaluj Dockera
-    W zależności od systemu operacyjnego, będzie się to trochę różniło.
+    W zależności od systemu operacyjnego, będzie się to trochę różniło. Najlepiej będzie przejrzeć oficjalną dokumentacje Dockera [jak zainstalować Docker Engine](https://docs.docker.com/engine/install/) na systemie który wybrałeś.
 
     Przykład na Debianie/Ubuntu
     ```
@@ -214,3 +214,6 @@ Do stworzenia instancji Lemmy wykorzystam Dockera, ponieważ to najprostsza meto
     ![community subscribe button](images/2024-04-09-lemmy/Screenshot_20240415_232342.png)
 
     Jeżeli po dłuższym czasie nadal nie pojawiają ci się posty z instancji zewnętrznych, sprawdź logi nginx, oraz czy na pewno twoja instancja jest poprawnie dostępna z internetu/posiada poprawnie skonfigurowane HTTPS
+
+Cover background: [Pawel Czerwinski](https://unsplash.com/@pawel_czerwinski?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [unsplash](https://unsplash.com/photos/a-close-up-of-a-purple-background-with-wavy-lines-hOYHAdgbTr0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+  
