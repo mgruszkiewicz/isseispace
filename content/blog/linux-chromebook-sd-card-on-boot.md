@@ -25,7 +25,7 @@ RemainAfterExit=yes
 [Install]
 WantedBy=local-fs.target
 ```
-Note: check if on your device the sdcard is also `mmc0` - you can check it just by looking at `lsblk`.  
+Note: check if on your device the sdcard is also `mmc0` - you can check it just by looking at `lsblk`.
 
 After creating the file at `/etc/systemd/system/rescan-sd-card.service`, we need to enable it
 ```
@@ -34,5 +34,5 @@ sudo systemctl enable rescan-sd-card.service
 
 And now, on boot, the system will 'remove' the mmc device, and rescan pci bus. That solved the issue and now my OS is booting without user intervention.
 
-## Reference:
+## Reference
 https://unix.stackexchange.com/questions/710377/microsd-card-not-found-at-boot-time-works-when-ejected-and-reinserted
