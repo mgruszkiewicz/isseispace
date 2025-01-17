@@ -9,7 +9,7 @@
     <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#1A94D2" />
-    {{ $css := resources.Get "css/bootstrap.css" | resources.PostCSS }}
+    {{ $css := resources.Get "css/bootstrap.css" | css.PostCSS }}
 
     {{ if hugo.IsProduction }}
       {{ $css = $css | minify | fingerprint | resources.PostProcess }}

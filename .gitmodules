@@ -1,3 +1,3 @@
 [submodule "themes/terminal"]
 	path = themes/terminal
-	url = https://github.com/ihyoudou/hugo-theme-terminal.git
+	url = ssh://git@github.com/ihyoudou/hugo-theme-terminal.git
