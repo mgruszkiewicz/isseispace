@@ -2,10 +2,12 @@ baseURL = 'https://issei.space/'
 languageCode = 'en-us'
 title = 'Issei.space'
 theme = "terminal"
-paginate = 5
 disqusShortname = 'blog-issei-space'
 
 enableGitInfo = true
+
+[pagination]
+  pagerSize = 5
 
 [build]
   writeStats = true
@@ -74,7 +76,7 @@ enableGitInfo = true
       title = "Issei.space"
       subtitle = "nerd that like to tinker with stuff"
       owner = ""
-      keywords = "issei.space, linux, laravel, hosting, devops, sysadmin, cloud, proxmox, docker"
+      keywords = "issei.space, linux, laravel, hosting, devops, sysadmin, cloud, proxmox, kubernetes, docker"
       copyright = ""
       menuMore = "Show more"
       readMore = "Read more"
