@@ -1,20 +1,24 @@
 ---
-title: "How NOT to setup a RWX storage for Kubernetes cluster"
-date: 2025-01-15T21:53:32+01:00
+title: "How NOT to setup a RWX storage for Kubernetes cluster - SMB share on Mikrotik router"
+date: 2025-01-17T21:53:32+01:00
 draft: false
-tags: ['en']
+cover: "images/2025-01-15-cursed-storage/cover.jpg"
+tags: ['en', 'kubernetes', 'lab']
 ---
 
-Some time ago i decided to setup seperate homelab network in my house, as my previous _homelab_ server is more like a production homeserver which i don't want to disrupt. It is not much, but i wanted to build something small, energy-efficient and from the parts i already had.
+Some time ago I decided to setup seperate homelab network in my house, as my previous _homelab_ server is more like a production homeserver which I don't want to disrupt. It is not much, but I wanted to build something small, energy-efficient and from the parts I already had.
 
-But back to the topic that made me curious - I kinda needed some persistent storage for pods in lab. Then i remembered that the Mikrotik (RB951G-2HnD) router i'm using have a USB port and i saw a option in winbox to create SMB share. I think you can image where it is going.
+But back to the topic that made me curious - I kinda needed some persistent storage for pods in lab. Then I remembered that the Mikrotik (RB951G-2HnD) router i'm using have a USB port and I saw an option in winbox to create SMB share. I think you can image where it is going.
 
 # Setup Kubernetes cluster
 
-For Kubernetes I will be using single-node Talos Linux. Didn't even used Terraform or anything fancy to deploy it, just created a virtual machine on Proxmox with nocloud image.
-As this writeup is not a tutorial, I will skip setup of Talos Linux.
+For Kubernetes I will be using single-node Talos Linux. Didn't even used Terraform or anything fancy to deploy it, just created a virtual machine on Proxmox with nocloud image.  
+What is a Talos Linux? Talos Linux is a minimal, immutable linux distribution that is designed for Kubernetes - it doesn't even have a SSH, and you do all the configuration over API.  
+
+As this writeup is not a tutorial, I will skip setup of Talos Linux, but if i got you interested, take a look on [Talos Linux Getting Started guide](https://www.talos.dev/v1.9/introduction/getting-started/)
 
 # Setup Samba share on Mikrotik
+The cover picture was kinda a clickbait - for storage I will be using a slow microSD card, as at the time of writing, i didn't had any USB-powered storage that was stable on my mikrotik (i guess 2,5" SSDs or HDDs might be a bit too power hungry, or my adapters were not compatible with ROS)
 
 I'm not a RouterOS expert, additionally the forum.mikrotik.com at the time of writing was down
 
@@ -60,7 +64,7 @@ Success!
 
 As of CSI driver setup, I just installed the driver using kubectl, following [official documentation](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/docs/install-csi-driver-v1.16.0.md)
 
-Created the StorageClass and Statefulset for testing aaand...
+Created the StorageClass, statefulset and persistent volume for testing aaand...
 
 ```
 csi-provisioner     Mounting command: mount
@@ -95,7 +99,7 @@ pvc-873655b4-c46b-4ef8-95db-7fa00a603be6   2Gi        RWO            Delete     
 ```
 we got our PV on smb share provisioned!
 
-Now let's enter the pod and do some basic tests. As i never used SMB CSI driver before, i was suprised that in `mount` i can see the whole path to smb server, but that makes sense.
+Now let's enter the pod and do some basic tests. As i never used SMB CSI driver before, i was surprised that in `mount` i can see the whole path to smb server, but that makes sense.
 ```
 / # mount
 [...]
@@ -176,11 +180,14 @@ Run status group 0 (all jobs):
    READ: bw=722KiB/s (739kB/s), 722KiB/s-722KiB/s (739kB/s-739kB/s), io=75.1MiB (78.8MB), run=106574-106574msec
   WRITE: bw=239KiB/s (245kB/s), 239KiB/s-239KiB/s (245kB/s-245kB/s), io=24.9MiB (26.1MB), run=106574-106574msec
 ```
-yeah, not that suprising.
+yeah, not that surprising.
 
+## Real-world application test?
+
+I really wanted to make a benchmark using Postgres `pgbench`, but Postgres will just hang on creating initial data, so i gave up. I think we already know how good it would perform with the current setup.
 
 ## End words
-Actually, the setup process on both RouterOS and Kubernetes part was pretty painless and i didn't even need to spend multiple hours on troubleshooting. Would i recomended that setup for file storage on PVC? Definitely not, but in a pinch, it might actually be useful as a shared storage for e.g small configuration files that need R/W access (otherwise just use configmaps).
+Actually, the setup process on both RouterOS and Kubernetes part was pretty painless and i didn't even need to spend multiple hours on troubleshooting. Would I recommended that setup for file storage on PVC? Definitely not, but in a pinch, it might actually be useful as a shared storage for e.g. small configuration files that need R/W access (otherwise just use configmaps).
 
 
 ## References
