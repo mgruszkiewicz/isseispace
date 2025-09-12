@@ -3,14 +3,15 @@ title: "ChatGPT on feature phone"
 date: 2025-09-12T11:08:01+02:00
 draft: false
 cover: "images/2025-09-12-nokia/main.jpg"
-tags: ['en']
+tags: ['en','2025']
 ---
 Last weekend, I was wondering, how hard  it would be to create a app for a _featurephone_/_dumbphone_/_brick_ however you want to name it.
 I never made any application for pre-android era phones and did not have the opportunity. All i know that it can be done in Java. I never actually programmed in java either, but I decided to give it a shot.
 
 ## Setting up the IDE
-I thought that this would take much longer, and I will probably need to create a VM with something like windows xp, however i found a easy to follow tutorial with working download links that helped me setup the environment in less than 30 minutes. I was suprised that it worked without issue even on windows 10
-{{< youtube QI5v6Wa6hvw >}}
+I thought that this would take much longer, and I will probably need to create a VM with something like windows xp, however i found a easy to follow tutorial with working download links that helped me setup the environment in less than 30 minutes. I was suprised that it worked without issue even on windows 10. 
+If you also want to setup J2ME environment [here is the link to youtube](https://youtu.be/QI5v6Wa6hvw) (author disallows playback on external sites :/)
+
 
 Not sure if all the software in that pack is clean, so for safety reasons i decided to run a VM anyway.
 Is there a way to setup a environemnt on linux? Probably yes, but personally i just wanted to get going and don't tinker with 32bit libraries.
