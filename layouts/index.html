@@ -3,70 +3,68 @@
   <head>
     <title>{{ .Title }}</title>
     <meta charset="utf-8">
-    <meta name="description"
-        content="nerd that like to tinker with stuff" />
+    <meta name="description" content="nerd that like to tinker with stuff" />
     <meta name="keywords" content="issei.space, linux, laravel, hosting, devops, sysadmin, cloud, proxmox, docker" />
     <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1A94D2" />
-    {{ $css := resources.Get "css/bootstrap.css" | css.PostCSS }}
 
+    <!-- 1. PageSpeed: Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 2. CSS Loading: Simplified -->
+    {{ $css := resources.Get "css/style.css" }}
+    
     {{ if hugo.IsProduction }}
       {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     {{ end }}
 
-    <link
-      rel="stylesheet"
-      href="{{ $css.RelPermalink }}"
-      integrity="{{ $css.Data.Integrity }}"
-    >
-
-    <link rel="preload" href='https://fonts.googleapis.com/css?family=Raleway&display=swap' as="style" onload="this.onload=null;this.rel='stylesheet'">
-    {{ $css := resources.Get "css/style.css" }}
-    {{ $style := $css | resources.Minify }}
-
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
     
-    <!-- 
-        include a favicon for your site if you have it, else omit the line below 
-        Location of favicon can be in mytheme/static/favicon.ico
-    -->
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-
-
 </head>
   <body>
     <div class="container" id="main">
       <main>
-        <div class="row d-flex align-items-center justify-content-center vh-100">
-          <div class="col-lg">
+        <section class="hero-section">
+          <div class="hero-col">
               <h1>
                 Hello World!<br>
                 I'm Issei
               </h1>
               <p>
-                DevOps, System Administrator<br>
+                DevOps Engineer (Kubernetes, Cloud-native, GCP/AWS/Azure, Proxmox)<br>
                 Software Developer (PHP, Laravel, some Python and Django)
                 <br><br>
                 My side hobby is tinkering with electronics and microcontrollers
                 <br><br>
-                See some of my <a href="/projects" alt="link to project section on my blog">projects</a>, you can find my blog <a href="/blog" alt="link to my blog">here</a>
+                View some of my projects on the <a href="/blog" aria-label="link to my blog">blog</a>
                 <br><br>
-                Find me on <a href="https://github.com/mgruszkiewicz" taget="_blank">Github</a>,
+                Find me on <a href="https://github.com/mgruszkiewicz" target="_blank" rel="noopener noreferrer">Github</a>,
                 <a rel="me" href="https://101010.pl/@moira">Mastodon</a>,
-                <a href="https://twitter.com/isseihere" target="_blank">Twitter</a>,
+                <a href="https://twitter.com/isseihere" target="_blank" rel="noopener noreferrer">Twitter</a>,
                 send me a email on <a href="mailto:hello@issei.space">hello@issei.space</a>
 
-                <br><br>
-                My TeamSpeak server: <a target="_blank" href="ts3server://ts.issei.space" alt="link to my teamspeak server">ts.issei.space</a> (<a href="https://rank.issei.space" target="_blank">stats</a>)
               </p>
           </div>
-          <div class="col-lg">
-            {{ $img:= resources.Get "images/index/main.jpg" }}
-            {{ $img := $img.Resize "600x" }}
-            <img src='{{ $img.RelPermalink }}' class="img-fluid" alt="Picture of a girl standing on train station, looking on arrivals table, at night.">
+          <div class="hero-col">
+            {{/* 3. Image Optimization */}}
+            {{ $imgSrc := resources.Get "images/index/main.jpg" }}
+            {{/* Resize and WebP conversion */}}
+            {{ $img := $imgSrc.Resize "600x webp" }}
+            
+            <img 
+                src="{{ $img.RelPermalink }}" 
+                width="{{ $img.Width }}" 
+                height="{{ $img.Height }}" 
+                class="img-fluid" 
+                alt="Picture of a girl standing on train station, looking on arrivals table, at night."
+                loading="eager"
+            >
           </div>
-        </div>
+        </section>
       </main>
     </div> 
   </body>

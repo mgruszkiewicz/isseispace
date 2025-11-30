@@ -1,30 +1,98 @@
+:root {
+    --primary-color: #1A94D2; /* Taken from your meta theme-color */
+    --text-color: #212529;
+    --bg-color: #ffffff;
+}
+
+html {
+    font-size: 16px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Raleway' !important;
-    background-color: #121212;
-}
-#main{
-    margin-top: 1rem;
-    color: #fff;
+    margin: 0;
+    font-family: 'Raleway', system-ui, -apple-system, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-a{
-    color: #BB86FC;
-}
-a:visited{
-    color: #ee72f1;
-}
+/* Typography */
 h1 {
-    font-size: 2.7em;
-    font-weight: medium;
-}
-p {
-    font-size: 1.2em;
-    font-weight: regular;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
 }
 
-img { 
-    max-width: 90% !important;
-}  
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #126f9e; /* Slightly darker shade */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Mobile: Stack vertically */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;      /* Full screen height */
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.hero-col {
+    width: 100%;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: adds nice rounded corners */
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row; /* Desktop: Side by side */
+        text-align: left;
+    }
+    
+    .hero-col {
+        flex: 1; /* Equal width columns */
+        padding: 0 1rem;
+    }
+    
+    /* Ensure image column aligns nicely */
+    .hero-col:last-child {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     #main{color: #fff;}
