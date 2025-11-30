@@ -8,32 +8,14 @@
     <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#1A94D2" />
-    {{ $css := resources.Get "css/bootstrap.css" | css.PostCSS }}
-
+    {{ $css := resources.Get "css/style.css" }}
+    
     {{ if hugo.IsProduction }}
       {{ $css = $css | minify | fingerprint | resources.PostProcess }}
     {{ end }}
 
-    <link
-      rel="stylesheet"
-      href="{{ $css.RelPermalink }}"
-      integrity="{{ $css.Data.Integrity }}"
-    >
-
-    <link rel="preload" href='https://fonts.googleapis.com/css?family=Raleway&display=swap' as="style" onload="this.onload=null;this.rel='stylesheet'">
-    {{ $css := resources.Get "css/style.css" }}
-    {{ $style := $css | resources.Minify }}
-
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-    
-   
-    <!-- 
-        include a favicon for your site if you have it, else omit the line below 
-        Location of favicon can be in mytheme/static/favicon.ico
-    -->
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-
-
 </head>
   <body>
     <div class="container" id="main">
@@ -46,5 +28,6 @@
           <a href="/">Go back to index</a>
         </div>
       </div>
-    </div> 
+    </div>
+  </body>
 </html>

@@ -4,17 +4,10 @@
     <title>{{ .Title }}</title>
     <meta charset="utf-8">
     <meta name="description" content="nerd that like to tinker with stuff" />
-    <meta name="keywords" content="issei.space, linux, laravel, hosting, devops, sysadmin, cloud, proxmox, docker" />
+    <meta name="keywords" content="issei.space, linux, laravel, hosting, devops, sysadmin, cloud, proxmox, docker, kubernetes" />
     <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1A94D2" />
-
-    <!-- 1. PageSpeed: Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- 2. CSS Loading: Simplified -->
     {{ $css := resources.Get "css/style.css" }}
     
     {{ if hugo.IsProduction }}

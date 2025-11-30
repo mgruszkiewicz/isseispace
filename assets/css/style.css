@@ -1,3 +1,19 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/FiraCode-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 800;
+    src: url("/fonts/FiraCode-Bold.woff") format("woff");
+}
+
 :root {
     --primary-color: #1A94D2; /* Taken from your meta theme-color */
     --text-color: #212529;
@@ -12,13 +28,17 @@ html {
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
-    font-family: 'Raleway', system-ui, -apple-system, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace;
+    letter-spacing: -0.02em;
+    font-feature-settings: "liga", "tnum", "zero", "ss01", "locl";
+    font-variant-ligatures: contextual;
 }
 
 /* Typography */
@@ -104,4 +124,33 @@ a:hover {
     #main{color: #000000;}
     body { background-color:  #fff; color: #000000; }
     a { color: #AA00FF; }
+}
+
+/* 404 page styles */
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row > * {
+    padding-right: 15px;
+    padding-left: 15px;
 }
