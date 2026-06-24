@@ -1,10 +1,12 @@
 baseURL = 'https://issei.space/'
-languageCode = 'en-us'
 title = 'Issei.space'
 theme = "terminal"
 disqusShortname = 'blog-issei-space'
 
 enableGitInfo = true
+
+[Language]
+locale = 'en-us'
 
 [pagination]
   pagerSize = 5
