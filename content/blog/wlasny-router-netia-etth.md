@@ -14,8 +14,25 @@ Zastanawiało mnie że instalator, jedyne co zrobił po przyjściu, to podłącz
 
 Metodą prób i błędów, doszedłem do tego, że aby podpiąć swój router do sieci ETTH w takim wypadku należy
 1. sklonować adres MAC WANu z routera który dostaliśmy od operatora (w przypadku Huawei DN8245X6-10, znajduje się od na naklejce od spodu urządzenia)
-2. ustawić dane logowania PPPoE na WAN na:  
+2. ~~ustawić dane logowania PPPoE na WAN na:  
 login: internet  
-hasło: internet  
+hasło: internet~~  
+Wychodzi na to, że nie zawsze PPPoE jest wymagane - u mnie na ETTH-IN wystarczy tylko sklonować adres MAC
+```
+root@OpenWrt:~# cat /etc/config/network | grep -A5 wan
+config interface 'wan'
+	option device 'wan'
+	option proto 'dhcp'
+	option macaddr '14:49:20:XX:XX:XX'
+	option peerdns '0'
+[...]
+root@OpenWrt:~# ifconfig | grep -A5 wan
+wan       Link encap:Ethernet  HWaddr 14:49:20:A7:D2:83
+          inet addr:100.124.xxx.xxx  Bcast:100.124.xxx.255  Mask:255.255.255.0
+          inet6 addr: fe80::1649:20ff:fea7:d283/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:98383500 errors:0 dropped:356456 overruns:0 frame:0
+          TX packets:47658079 errors:0 dropped:0 overruns:0 carrier:0
+```
 
-Po tej operacji, mój mikrotik dostał adres z DHCP - niestety przez ostatnie zmiany w sieci Netii, adres IP zza CGNAT zamist publiczny :(
+Po tej operacji, mój mikrotik (i później router na openwrt) dostał adres z DHCP - niestety przez ostatnie zmiany w sieci Netii, adres IP zza CGNAT zamist publiczny :(

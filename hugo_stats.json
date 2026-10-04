@@ -7,6 +7,7 @@
       "body",
       "br",
       "code",
+      "del",
       "div",
       "em",
       "footer",
@@ -106,8 +107,8 @@
       "vh-100"
     ],
     "ids": [
-      "425379681",
-      "651829734",
+      "135427968",
+      "832764195",
       "TableOfContents",
       "ale-od-początku---co-to-jest-w-ogóle-ta-ramka-zoomme",
       "alternative-way-using-docker",
