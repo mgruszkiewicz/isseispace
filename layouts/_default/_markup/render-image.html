@@ -1,11 +1,15 @@
 {{- $img := resources.GetMatch .Destination -}}
+{{- $full := "" -}}
 {{- if resources.GetMatch .Destination }}
+    {{- $full = (resources.GetMatch .Destination).RelPermalink -}}
     {{- $img = ((resources.GetMatch .Destination).Resize "x900 webp").RelPermalink -}}
   {{- else -}}
     {{- $img = absURL .Destination -}}
+    {{- $full = $img -}}
   {{- end -}}
 <img
   src="{{ $img }}"
+  data-full="{{ $full }}"
   alt="{{ .Text }}"
   loading="lazy"
 />

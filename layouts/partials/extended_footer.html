@@ -1,0 +1,25 @@
+<script>
+  (function () {
+    var imgs = document.querySelectorAll(".post-content img");
+    if (!imgs.length || typeof HTMLDialogElement === "undefined") return;
+
+    var dialog = document.createElement("dialog");
+    dialog.className = "img-lightbox";
+    var big = document.createElement("img");
+    dialog.appendChild(big);
+    document.body.appendChild(dialog);
+
+    // click anywhere (image or backdrop) closes; Esc is handled natively
+    dialog.addEventListener("click", function () { dialog.close(); });
+
+    imgs.forEach(function (img) {
+      img.addEventListener("click", function (e) {
+        // don't hijack images wrapped in links
+        if (img.closest("a")) return;
+        big.src = img.dataset.full || img.currentSrc || img.src;
+        big.alt = img.alt;
+        dialog.showModal();
+      });
+    });
+  })();
+</script>
